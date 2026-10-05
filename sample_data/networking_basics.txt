@@ -1,0 +1,9 @@
+Computer Networking Basics
+
+The Transmission Control Protocol (TCP) is a connection-oriented transport protocol. Before any application data is exchanged, the two hosts must agree to talk to each other. TCP establishes communication using a three-way handshake: the client sends a SYN segment, the server answers with SYN-ACK, and the client confirms with an ACK.
+
+TCP also provides reliable delivery. Every segment carries a sequence number, the receiver acknowledges what it has received, and missing segments are retransmitted. Flow control and congestion control keep a fast sender from overwhelming a slow receiver or the network.
+
+The Domain Name System (DNS) works like the phone book of the internet. When you type a website name into a browser, a DNS resolver translates the human-readable name into the numeric IP address of the server, often by asking a chain of recursive, root, top-level-domain and authoritative name servers.
+
+The User Datagram Protocol (UDP) is connectionless. It skips the handshake and retransmission, which makes it faster but unreliable. It suits live video, voice calls and online games where a late packet is worthless.

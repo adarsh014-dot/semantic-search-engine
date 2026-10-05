@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Semantic Search Engine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>Semantic Search Engine</h1>
+      <p class="sub">Semantic document retrieval using AI embeddings</p>
+    </div>
+    <div class="chip" id="modelChip" title="Embedding model and index size">Connecting to server…</div>
+  </header>
+
+  <main class="layout">
+    <aside class="rail">
+      <section class="panel" aria-labelledby="uploadTitle">
+        <h2 id="uploadTitle">Upload documents</h2>
+        <div class="drop" id="drop" tabindex="0" role="button" aria-label="Drop files here or press Enter to browse">
+          <p class="drop-main">Drag and drop files here</p>
+          <p class="drop-sub">PDF, TXT or DOCX, up to <span id="maxMb">25</span> MB each</p>
+          <button type="button" class="btn ghost" id="browse">Browse files</button>
+          <input type="file" id="fileInput" accept=".pdf,.txt,.docx" multiple hidden>
+        </div>
+        <ul class="files" id="pendingList" aria-live="polite"></ul>
+        <button type="button" class="btn primary wide" id="uploadBtn" hidden>Upload and index</button>
+        <p class="note" id="uploadNote" role="status"></p>
+      </section>
+
+      <section class="panel" aria-labelledby="docsTitle">
+        <div class="panel-head">
+          <h2 id="docsTitle">Documents</h2>
+          <button type="button" class="btn link" id="reindexAll" hidden title="Rebuild the whole index from the original files">Re-index all</button>
+        </div>
+        <div id="docs"></div>
+      </section>
+    </aside>
+
+    <section class="stage" aria-labelledby="searchTitle">
+      <h2 id="searchTitle" class="visually-hidden">Search your documents</h2>
+      <form class="search" id="searchForm" autocomplete="off">
+        <label for="query" class="search-label">Search your documents</label>
+        <div class="search-row">
+          <input id="query" type="search" maxlength="1000" placeholder="How does TCP establish a connection?" required>
+          <button class="btn primary" type="submit" id="searchBtn">Search</button>
+        </div>
+        <div class="topk" role="radiogroup" aria-label="Number of results">
+          <span>Top K</span>
+          <button type="button" role="radio" data-k="3" aria-checked="false">3</button>
+          <button type="button" role="radio" data-k="5" aria-checked="true">5</button>
+          <button type="button" role="radio" data-k="10" aria-checked="false">10</button>
+        </div>
+      </form>
+
+      <div class="status" id="searchStatus" role="status" aria-live="polite"></div>
+      <div id="results"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

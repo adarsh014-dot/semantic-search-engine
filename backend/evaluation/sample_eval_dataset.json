@@ -1,0 +1,16 @@
+{
+  "name": "DEMONSTRATION dataset for the files in sample_data/",
+  "note": "Tiny hand-written set meant only to show the evaluation format. It is far too small to say anything meaningful about retrieval quality. Replace it with queries for your own documents.",
+  "queries": [
+    {"query": "How does TCP start communication between two hosts?",
+     "expected_document": "networking_basics.txt", "expected_chunk": "three-way handshake"},
+    {"query": "What translates a website name into an IP address?",
+     "expected_document": "networking_basics.txt", "expected_chunk": "Domain Name System"},
+    {"query": "Which sorting algorithm splits the array in halves and merges them?",
+     "expected_document": "algorithms_notes.docx", "expected_chunk": "merge sort"},
+    {"query": "How do plants turn sunlight into chemical energy?",
+     "expected_document": "biology_primer.pdf", "expected_chunk": "photosynthesis"},
+    {"query": "Why does a hash table give fast lookups?",
+     "expected_document": "algorithms_notes.docx", "expected_chunk": "hash table"}
+  ]
+}
