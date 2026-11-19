@@ -1,5 +1,11 @@
 # Semantic Embedding Search Engine
 
+![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+![FAISS](https://img.shields.io/badge/FAISS-vector%20search-0467DF)
+![tests](https://img.shields.io/badge/tests-37%20passing-brightgreen)
+![license](https://img.shields.io/badge/license-MIT-blue)
+
 Upload PDF, TXT and DOCX files, and search them **by meaning** instead of by exact keywords.
 This is a *retrieval* system: it returns the most relevant document chunks with real
 similarity scores and sources. There is deliberately **no LLM and no generated answer**, so you can
@@ -177,6 +183,9 @@ To compare models: change `EMBEDDING_MODEL`, re-index, run again, and compare di
 pytest -q
 ```
 
+**37 tests passing** (verified on Windows 11 with Python 3.14.0: `pytest -q` → `37 passed in ~42s`; the real-model
+tests need a one-time model download and are skipped automatically when offline).
+
 * `test_chunker.py`: chunking, overlap, metadata, cleaning
 * `test_search.py`: FAISS insert/search/metadata mapping/delete/persistence/corruption recovery
 * `test_api.py`: upload, index, search, errors, duplicates, traversal, restart, delete, re-index
@@ -205,3 +214,7 @@ There is no authentication, so this is meant for local or portfolio use.
 * Similarity scores are only comparable within one model; `SEARCH_MIN_SCORE` needs tuning per model.
 * Background indexing uses an in-process worker: a server crash mid-job leaves that document marked *failed* (re-index it). One job runs at a time.
 * Upload hashing detects *identical* files only, not near-duplicates.
+
+## Licence
+
+Released under the **MIT Licence** — see [LICENSE](LICENSE).

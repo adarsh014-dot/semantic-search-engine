@@ -8,3 +8,5 @@ data/processed/*
 data/index/*
 !data/**/.gitkeep
 .DS_Store
+.idea/
+.vscode/
