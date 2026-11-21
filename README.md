@@ -1,5 +1,10 @@
 # Semantic Embedding Search Engine
 
+> **Learning project.** Built by following a guided tutorial, then worked through to understand the design.
+>
+> Not production code — this is a study project, and the README documents what I learned.
+
+
 ![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
 ![FAISS](https://img.shields.io/badge/FAISS-vector%20search-0467DF)
