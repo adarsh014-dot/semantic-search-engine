@@ -87,7 +87,7 @@ class SentenceTransformerEmbedder(BaseEmbedder):
                     from sentence_transformers import SentenceTransformer
                     logger.info("Loading embedding model %s ...", self.model_name)
                     self._model = SentenceTransformer(self.model_name, device=self.device)
-                    self._dimension = int(self._model.get_sentence_embedding_dimension())
+                    self._dimension = int(self._model.get_embedding_dimension())
                     logger.info("Model ready (dimension=%d)", self._dimension)
                 except Exception as exc:
                     logger.exception("Could not load embedding model %s", self.model_name)
